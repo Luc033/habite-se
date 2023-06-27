@@ -8,8 +8,31 @@ const profissional = document.getElementById("inputProfissional");
 let radioTxHabitese = document.getElementsByName("radioTxHabitese");
 //const assEng = document.getElementsByName("radioAssinatura");
 
+
 let txHabiteseSelected = 0;
 let assEngSelected = 0;
+
+//Verificando qual dos radio do campo de Tx de Habite-se está selecionado e atribuindo seu respectivo valor
+function selectTxHabitese() {
+    for (let i = 0; i < radioTxHabitese.length; i++) {
+        console.log('\nEntrou no for - '+i);
+        if (radioTxHabitese[i].checked) {
+            console.log('\nEntrou no radio checked')
+            if (radioTxHabitese[i].value === '1') {
+                console.log('\nAtribuiu o valor da tx selecionada e validou como trua a radio index '+radioTxHabitese[i].value)
+                radioTxHabitese[i].checked = true;
+                txHabiteseSelected = 111.88;
+            }else{
+                console.log('\nErro no value')
+            }
+        }
+    }
+    console.log('value do radioTxHabitese: ' + radioTxHabitese +'|| txhabiteseSelected: ' + txHabiteseSelected);
+}
+
+function teste(){
+    console.log('teste funcao');
+}
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -17,35 +40,20 @@ form.addEventListener('submit', (event) => {
  
     // Verifica se o campo cadastro está vazio
     if (cadastro.value === "") {
-        return;
+        console.log("cadastro vazio");
+        //return;
     }
     
     // Verifica se o campo interessasdo está vazio
     if (interessado.value === ""){
-        return;
+        console.log("interessado vazio");
+       // return;
     }
-
+    
     // Verifica se o campo profissional está vazio
     if (profissional.value === ""){
-        return;
-    }
-
-    //Verificando qual dos radio do campo de Tx de Habite-se está selecionado e atribuindo seu respectivo valor
-    function selectTxHabitese() {
-        for (let i = 0; i < radioTxHabitese.length; i++) {
-            console.log('\nEntrou no for');
-            if (radioTxHabitese[i].checked) {
-                console.log('\nEntrou no radio checked')
-                if (radioTxHabitese[i].value === '1') {
-                    console.log('\nAtribuiu o valor da tx selecionada e validou como trua a radio index '+radioTxHabitese[i])
-                    radioTxHabitese[i].checked = true;
-                    txHabiteseSelected = 111.88;
-                }else{
-                    console.log('\nErro no value')
-                }
-            }
-        }
-        console.log('value do radioTxHabitese: ' + radioTxHabitese +'|| txhabiteseSelected: ' + txHabiteseSelected);
+        console.log("profissional vazio");
+        //return;
     }
     selectTxHabitese();
     
