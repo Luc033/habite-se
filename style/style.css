@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* DECLARAÇÃO DE VARIÁVEIS */
+
+/* ESTILIZAÇÃO */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+nav {
+  background-color: red;
+}
+/* MAIN */
+main {
+  display: flex;
+}
+
+/* FORM */
+.myForm {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 50%;
+  text-align: center; 
+  background-color: paleturquoise;
+}
+h1 {
+  text-align: center;
+}
+label{
+  font-weight: bold;
+}
+input[type="text"], input[type="number"]{
+  width: 50%;
+  height: 20px;
+}
+
+input[type="radio"] {
+  margin-left: 15px;
+}
+
+.h1-iss {
+  display: inline-block;
+  text-align: center;
+}
+.btn-ativar {
+  display: flexbox;
+}
+.row{
+    display: grid;
+    place-items: center;
+    justify-items: end;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 15px;
+    
+}
+.row2{
+    display: grid;
+    place-items: center;
+    justify-items: end;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 15px;
+    
+}
+.col1{
+    display: flex;
+}
+.componentes{
+    margin-top: 10px;
+}
+.sub-componentes{
+    display: flex;
+    margin: 10px 0;
+}
+
+.sub-componentes > button{
+    margin: 0 15px;
+}
+
+.btn-submit{
+  width: 100px;
+  height: 20px;
+}
