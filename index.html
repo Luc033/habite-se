@@ -1,178 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <!--  HEADER -->
-    <header>
-      <nav id="">NAV</nav>
-      <h1 id="meuElemento"></h1>
-    </header>
+    <header></header>
     <main>
-      <form class="myForm" id="form">
-        <h1>HABITE-SE</h1>
-        <!-- CADASTRO / INTERESSADO -->
-        <div class="msg"></div>
-        <div class="componentes">
-          <label for="cadastro" id="lbl-cadastro">Cadastro:</label>
-          <input type="number" name="cadastro" id="inputCadastro" />
-        </div>
-        <div class="componentes">
-          <label for="interessado" id="lbl-interessado">Interessado:</label>
-          <input type="text" name="interessado" id="inputInteressado" />
-        </div>
-        <div class="componentes">
-          <label for="profissional" id="lbl-interessado">Profissional:</label>
-          <input type="text" name="profissional" id="inputProfissional" />
-        </div>
-        <!-- HABITE-SE-->
-        <div class="componentes">
-          <label class="lbl-center" for="radioTxHabitese" id="lbl-tx-habitese"
-            >Taxa Habite-se:</label
-          >
-          <span
-            ><input
-              class="radio-habitese"
-              type="radio"
-              name="radioTxHabitese"
-              value="1"
-            />Até 80m²</span
-          >
-          <span
-            ><input
-              class="radio-habitese"
-              type="radio"
-              name="radioTxHabitese"
-              value="2"
-            />80,01m² - 100m²</span
-          >
-          <span
-            ><input
-              class="radio-habitese"
-              type="radio"
-              name="radioTxHabitese"
-              value="3"
-            />100,01m² - 200m²</span
-          >
-          <span
-            ><input
-              class="radio-habitese"
-              type="radio"
-              name="radioTxHabitese"
-              value="4"
-            />+200m²</span
-          >
-        </div>
-        <!-- ASSINATURA DO ENGENHEIRO -->
-        <div class="componentes">
-          <label for="radioAssinatura" id="lbl-assinatura"
-            >Assinatura do engenheiro</label
-          >
-          <span
-            ><input
-              class="radio-assinatura"
-              type="radio"
-              name="radioAssinatura"
-              value="1"
-            />Até 60m²</span
-          >
-          <span
-            ><input
-              class="radio-assinatura"
-              type="radio"
-              name="radioAssinatura"
-              value="2"
-            />+60m²</span
-          >
-        </div>
-        <!-- ISS -->
-        <div class="componentes">
-          <button class="btn-ativar" onclick="">Ativar</button>
-          <h1 class="h1-iss">ISS</h1>
-            <div class="iss-hiden" id="iss-hiden">
-                <div class="sub-componentes">
-                    <div class="row">
-                        <div class="co1">
-                            <button class="btn-ativar" onclick="">Ativar</button>
-                        </div>
-                            <div class="col2" id="iss-normal col">
-                                <!-- LADO -->
-                                <div class="sub-componentes">
-                                    <label for="radioLado" id="lbl-lado">Lado</label>
-                                    <span
-                                    ><input type="radio" name="radioLado" value="A" />A</span
-                                    >
-                                    <span
-                                    ><input type="radio" name="radioLado" value="B" />B</span
-                                    >
-                                </div>
-                                <!-- AREA -->
-                                <div class="sub-componentes">
-                                    <label for="areaISS" id="lbl-area-iss">Área</label>
-                                    <input type="number" step="any" min="0" name="areaISS" />
-                                </div>
-                                <!-- PARCELA -->
-                                <div class="sub-componentes">
-                                    <label for="issParcela" id="lbl-iss-parcela"
-                                    >Parcela:</label
-                                    >
-                                    <span
-                                    ><input type="radio" name="issParcela" value="1" />1<input
-                                        type="radio"
-                                        name="issParcela"
-                                        value="2"
-                                    />2<input
-                                        type="radio"
-                                        name="issParcela"
-                                        value="3"
-                                    />3<input
-                                        type="radio"
-                                        name="issParcela"
-                                        value="4"
-                                    />4</span
-                                    >
-                                </div>
-                        </div>
+        <form class="myForm" id="myForm">
+            <h1>HABITE-SE</h1>
+            <div class="componentes">
+                <label for="cadastro" id="lbl-cadastro">Cadastro:</label>
+                <input type="number" name="cadastro" id="input-cadastro">
+            </div>
+            <div class="componentes">
+                <label class="lbl-center" for="radio-tx-habitese" id="lbl-tx-habitese">Taxa Habite-se</label>
+                <span><input class="radio-habitese" type="radio" name="radio-tx-habitese" value="">Até 80m²</span>
+                <span><input class="radio-habitese" type="radio" name="radio-tx-habitese" value="">80,01m² - 100m²</span>
+                <span><input class="radio-habitese" type="radio" name="radio-tx-habitese" value="">100,01m² - 200m²</span>
+                <span><input class="radio-habitese" type="radio" name="radio-tx-habitese" value="">+200m²</span>
+            </div>
+            <div class="componentes">
+                <label for="assinatura" id="lbl-assinatura">Assinatura do engenheiro</label>
+                <span><input class="radio-assinatura" type="radio" name="radio-assinatura" value="">Até 60m²</span>
+                <span><input class="radio-assinatura" type="radio" name="radio-assinatura" value="">+60m²</span>
+            </div>
+            <div class="componentes">
+                <h1>ISS</h1>
+                <button onclick="">Ativar</button>
+                <div class="iss-hiden">
+                    <div class="sub-componentes">
+                        <label for="lado" id="lbl-lado">Lado</label>
+                        <span><input type="radio" name="radio-lado" value="">A</span>
+                        <span><input type="radio" name="radio-lado" value="">B</span>
                     </div>
-                </div>
-                <!-- TESTADA -->
-                <div class="sub-componentes row2">
-                        <button class="btn-ativar" onclick="">Ativar</button>
-                        <div class="" id="testada">
+                    <div class="sub-componentes">
+                        <label for="area-iss" id="lbl-area-iss">Área</label>
+                        <input type="number" step="any" min="0" name="area-iss">
+                    </div>
+                    <div class="sub-componentes">
+                        <label for="iss-parcela" id="lbl-iss-parcela">Parcela:</label>
+                        <span><input type="radio" name="iss-parcela" value="">1<input type="radio" name="iss-parcela" value="">2<input type="radio" name="iss-parcela" value="">3<input type="radio" name="iss-parcela" value="">4</span>
+                    </div>
+                    <div class="sub-componentes">
+                        <label for="area-calcada" id="lbl-area-calcada">Área da calçada:</label>
+                        <input type="number" name="area-calcada">
+                    </div>
+                    <div class="sub-componentes">
+                        <label for="area-muro" id="lbl-area-muro">Área do muro:</label>
+                        <input type="number" name="area-muro">
+                    </div>
+                    <div class="sub-componentes">
                         <label for="testada" id="lbl-testada">Testada:</label>
-                        <input type="number" name="testada" />
+                        <input type="number" name="testada">
                     </div>
-                </div>
-                <!-- ÁREA DA CALÇADA-->
-                <div class="sub-componentes">
-                    <button class="btn-ativar" onclick="">Ativar</button>
-                    <div class="">
-                        <label for="areaCalcada" id="lbl-area-calcada"
-                        >Área da calçada:</label
-                        >
-                        <input type="number" name="areaCalcada" />
-                    </div>
-                </div>
-                <!-- ÁREA DO MURO -->
-                <div class="sub-componentes">
-                <button class="btn-ativar" onclick="">Ativar</button>
-                <div class="">
-                    <label for="areaMuro" id="lbl-area-muro">Área do muro:</label>
-                    <input type="number" name="areaMuro" />
-                </div>
                 </div>
             </div>
-        </div>
-
-        <!-- BOTÃO ENVIAR FORMULÁRIO -->
-        <input class="btn-submit" id="submit" type="submit" value="Calcular" />
-      </form>
+            <input type="submit"  value="Calcular">
+        </form>
     </main>
-  </body>
-  <script src='js/scripts.js'></script>
+</body>
 </html>
