@@ -10,6 +10,9 @@ const radioTxHabitese = document.getElementsByName("radioTxHabitese");
 
 
 const txHabitese80 = 111.88;
+const txHabitese100 = 150.88;
+const txHabitese200 = 200.88;
+const txHabitese20001 = 250.88;
 let txHabiteseSelected = 0;
 
 
@@ -24,42 +27,33 @@ function selectTxHabitese() {
             if (radioTxHabitese[i].value === '1') {
                 txHabiteseSelected = txHabitese80;
                 console.log('Habite-se de até 80 m² radio ('+radioTxHabitese[i].value + ')');
+                return txHabiteseSelected;
             }else{
-                console.log('\nErro no value')
+                console.log('\nErro no value do habite-se 80')
+            }
+            if (radioTxHabitese[i].value === '2') {
+                txHabiteseSelected = txHabitese100;
+                console.log('Habite-se de 80,01m² - 100m² radio ('+radioTxHabitese[i].value + ')');
+            }else{
+                console.log('\nErro no value do habite-se 80,01m² - 100m²')
+            }
+            if (radioTxHabitese[i].value === '3') {
+                txHabiteseSelected = txHabitese200;
+                console.log('Habite-se de 100,01m² - 200m² radio ('+radioTxHabitese[i].value + ')');
+            }else{
+                console.log('\nErro no value do habite-se 100,01m² - 200m²')
+            }
+            if (radioTxHabitese[i].value === '4') {
+                txHabiteseSelected = txHabitese20001;
+                console.log('Habite-se > 200m² radio ('+radioTxHabitese[i].value + ')');
+            }else{
+                console.log('\nErro no value do Habite-se > 200m²')
             }
         }
     }
-    console.log('Valor do ' + txhabiteseSelected + txHabiteseSelected);
+    console.log('Valor do ' + txhabiteseSelected);
 }
 
-function selectTxHabitese2() {
-    for (let i = 0; i < radioTxHabitese.length; i++) {
-        if (radioTxHabitese[i].checked) {
-            switch (radioTxHabitese[i].value) {
-                case '1':
-                    txHabiteseSelected = 111.88;
-                    console.log('value do radioTxHabitese: '+radioTxHabitese+'|| txhabiteseSelected: '+txHabiteseSelected);
-                    break;            
-                case '2':
-                    radioTxHabitese[i].checked = true;
-                    txHabiteseSelected = 167.87;
-                    break;            
-                case '3':
-                    radioTxHabitese[i].checked = true;
-                    txHabiteseSelected = 251.78;
-                    break;            
-                case '4':
-                    radioTxHabitese[i].checked = true;
-                    txHabiteseSelected = 378.41;
-                    break;
-                default:
-                console.log("erro na validação do radio tx Habite-se");
-            }
-            console.log('value do radioTxHabitese: '+radioTxHabitese+'|| txhabiteseSelected: '+txHabiteseSelected);
-        }
-
-    }
-}
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -93,45 +87,3 @@ form.addEventListener('submit', (event) => {
    // Se a validação passar, envie o formulário
    form.submit();
 });
-
-
-/*
-@ -1,36 +0,0 @@
-// DOM 
-const form = document.getElementById('myForm');
-const cadastro = document.getElementById('input-cadastro');
-const radioTxHabitese = document.getElementsByName('radio-tx-habitese');
-const radioAssinatura = document.getElementsByName('radio-assinatura');
-
-let entradaHabitese = 0;
-
-// Variáveis das taxas fixas
-const txHabitese80 = 147.45;
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    retornaValorRadioHabitese();
-})
-
-function retornaValorRadioHabitese() {
-    for (let i = 0; i < radioTxHabitese.length; i++) {
-        if (radioTxHabitese[i].checked) {
-            if (radioTxHabitese[i].value == '1'){
-                entradaHabitese = txHabitese80;
-                console.log("funcionou");
-            }
-            
-            alert(
-                "radio (" + radioTxHabitese[i].value + ") checked" +
-                "\n" +
-                "Valor retornado: " +
-                valorRetornado +
-                "\n valor de a: "+ a
-                );
-            
-            }
-        }
-    }
-    
-
-*/
