@@ -6,52 +6,62 @@ const cadastro = document.getElementById("inputCadastro");
 const interessado = document.getElementById("inputInteressado");
 const profissional = document.getElementById("inputProfissional");
 const radioTxHabitese = document.getElementsByName("radioTxHabitese");
-//const assEng = document.getElementsByName("radioAssinatura");
+const radioAssinatura = document.getElementsByName("radioAssinatura");
 
 
+
+// declarando as variáveis para iteragir com o DOM da taxa do HAbite-se
 const txHabitese80 = 111.88;
-const txHabitese100 = 150.88;
-const txHabitese200 = 200.88;
-const txHabitese20001 = 250.88;
+const txHabitese100 = 167.87;
+const txHabitese200 = 251.78;
+const txHabitese20001 = 378.41;
 let txHabiteseSelected = 0;
-
-
-let assEngSelected = 0;
 
 //Verificando qual dos radio do campo de Tx de Habite-se está selecionado e atribuindo seu respectivo valor
 function selectTxHabitese() {
     for (let i = 0; i < radioTxHabitese.length; i++) {
-        console.log('\nEntrou no for - '+i);
         if (radioTxHabitese[i].checked) {
-            console.log('\nEntrou no radio checked')
             if (radioTxHabitese[i].value === '1') {
                 txHabiteseSelected = txHabitese80;
-                console.log('Habite-se de até 80 m² radio ('+radioTxHabitese[i].value + ')');
-                return txHabiteseSelected;
             }else{
-                console.log('\nErro no value do habite-se 80')
-            }
-            if (radioTxHabitese[i].value === '2') {
-                txHabiteseSelected = txHabitese100;
-                console.log('Habite-se de 80,01m² - 100m² radio ('+radioTxHabitese[i].value + ')');
-            }else{
-                console.log('\nErro no value do habite-se 80,01m² - 100m²')
-            }
-            if (radioTxHabitese[i].value === '3') {
-                txHabiteseSelected = txHabitese200;
-                console.log('Habite-se de 100,01m² - 200m² radio ('+radioTxHabitese[i].value + ')');
-            }else{
-                console.log('\nErro no value do habite-se 100,01m² - 200m²')
-            }
-            if (radioTxHabitese[i].value === '4') {
-                txHabiteseSelected = txHabitese20001;
-                console.log('Habite-se > 200m² radio ('+radioTxHabitese[i].value + ')');
-            }else{
-                console.log('\nErro no value do Habite-se > 200m²')
+                if (radioTxHabitese[i].value === '2') {
+                    txHabiteseSelected = txHabitese100;
+                }else{
+                    if (radioTxHabitese[i].value === '3') {
+                        txHabiteseSelected = txHabitese200;
+                    }else{
+                        if (radioTxHabitese[i].value === '4') {
+                            txHabiteseSelected = txHabitese20001;
+                        }else{
+                        }
+                    }
+                }
             }
         }
     }
-    console.log('Valor do ' + txhabiteseSelected);
+    console.log('Valor do habite-se: R$ ' + txHabiteseSelected);
+}
+//declarando variáveis para iteragir com DOM assinatura
+const assEng60 = 65.90;
+const assEng6001 = 131.88;
+let txAssEngSelected = 0;
+
+// Função para identificar e estimar a assinatura do engenheiro
+function selectAssEng(){
+    for (var i = 0; i < radioAssinatura.length; i++){
+        if (radioAssinatura[i].checked){
+            if (radioAssinatura[i].value === '1'){
+                txAssEngSelected = assEng60;
+                console.log('\nAssinatura selecionada de até 60m² ('+radioAssinatura[i].value + ')');
+            }else{
+                if (radioAssinatura[i].value === '2'){
+                    txAssEngSelected = assEng6001;
+                    console.log('\nAssinatura selecionada acima de 60m² ('+radioAssinatura[i].value + ')');
+                }
+            }
+        }
+    }
+    console.log('Valor da assinatura do engenherio: R$ ' + txAssEngSelected);
 }
 
 
@@ -77,12 +87,7 @@ form.addEventListener('submit', (event) => {
         //return;
     }
     selectTxHabitese();
-    
-    /*
-        function txHabiteseSelected() {
-        }
-    }
-    */
+    selectAssEng();
    
    // Se a validação passar, envie o formulário
    form.submit();
